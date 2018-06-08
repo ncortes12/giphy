@@ -56,21 +56,21 @@ function displayGiphy() {
             gifDiv.append(image);
             gifDiv.append(favorite);
             $("#giph-here").prepend(gifDiv);
-
+            image.on("click", function () {
+                var state = $(this).attr("state");
+    
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("state", "still");
+                }
+            })
 
 
         }
-        $(".image").on("click", function () {
-            var state = $(this).attr("state");
-
-            if (state === "still") {
-                $(this).attr("src", $(this).attr("data-animate"));
-                $(this).attr("state", "animate");
-            } else {
-                $(this).attr("src", $(this).attr("data-still"));
-                $(this).attr("state", "still");
-            }
-        })
+       
 
         $(".favorite").on("click", function () {
             console.log("yay")
@@ -87,5 +87,4 @@ function displayGiphy() {
     })
 }
 $(document).on("click", ".animal", displayGiphy);
-
 

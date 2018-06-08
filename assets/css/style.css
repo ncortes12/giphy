@@ -3,6 +3,8 @@ body {font-family: 'Amatic SC', cursive;
 
 }
 
+p {font-size:28px;}
+
 .display {margin-bottom:10px;
         padding-bottom:10px;
         border-bottom-style: dotted;
